@@ -33,7 +33,7 @@
     "body": ["\"use client\"", "$1"]
   },
   "use server": {
-    "scope": "typescriptreact",
+    "scope": "typescript",
     "prefix": ["useserver", "us"],
     "body": ["\"use server\"", "$1"]
   }
