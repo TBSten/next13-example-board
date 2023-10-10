@@ -17,8 +17,12 @@ export const saveJson = async (key: string, json: unknown) => {
  * 学習用に用意した簡易的な取得関数。
  * @param key データのid
  */
-export const loadJson = async (key: string): Promise<unknown> => {
-    const fileName = `./local-data/${key}.data.json`
-    const text = await readFile(fileName, CHARSET)
-    return JSON.parse(text)
+export const loadJson = async (key: string, defaultValue?: unknown): Promise<unknown> => {
+    try {
+        const fileName = `./local-data/${key}.data.json`
+        const text = await readFile(fileName, CHARSET)
+        return JSON.parse(text)
+    } catch (error) {
+        return defaultValue
+    }
 }
