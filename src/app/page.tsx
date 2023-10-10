@@ -1,11 +1,12 @@
+import { Container } from "@mantine/core";
 import NewThread from "./NewThread";
 import ThreadList from "./ThreadList";
 
 export default function Home() {
   return (
-    <main>
+    <Container my="md">
       <NewThread />
       <ThreadList />
-    </main>
+    </Container>
   )
 }
