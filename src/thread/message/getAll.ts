@@ -5,7 +5,7 @@ import { MessageSchema } from './type';
 export const getThreadMessages = async (threadId: string) => {
     await sleep(500)
     try {
-        const data = await loadJson(`thread-messages-${threadId}`)
+        const data = await loadJson(`messages-${threadId}`)
         const messages = MessageSchema.array().parse(data)
         return messages
     } catch (error) {
