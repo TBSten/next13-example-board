@@ -11,9 +11,9 @@ export const addMessage = async (params: CreateMessageParams) => {
         updateAt: new Date(),
     }
     // get messages
-    const data = await loadJson(`thread-messages-${params.threadId}`, [])
+    const data = await loadJson(`messages-${params.threadId}`, [])
     const messages = MessageSchema.array().parse(data)
     messages.push(message)
-    await saveJson(`thread-messages-${params.threadId}`, messages)
+    await saveJson(`messages-${params.threadId}`, messages)
     return message
 }
