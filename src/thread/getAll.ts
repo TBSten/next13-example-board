@@ -1,5 +1,3 @@
-"use server"
-
 import { listJson } from "@/local-db"
 import { getThread } from "./getOne"
 import { Thread } from "./type"

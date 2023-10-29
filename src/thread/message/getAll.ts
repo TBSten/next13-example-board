@@ -1,4 +1,3 @@
-"use server"
 import { loadJson } from "@/local-db";
 import { MessageSchema } from './type';
 

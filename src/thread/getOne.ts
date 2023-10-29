@@ -1,5 +1,3 @@
-"use server"
-
 import { loadJson } from "@/local-db"
 import { ThreadSchema } from "./type"
 

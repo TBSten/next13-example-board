@@ -1,20 +1,14 @@
 "use client"
 
-import { addThread } from "@/thread/add"
 import { Box, Button, Flex, TextInput, Title } from "@mantine/core"
-import { useRouter } from "next/navigation"
 import { FC, useState } from "react"
+import { handleAddThread } from "./actions"
 
 interface NewThreadProps {
 }
 const NewThread: FC<NewThreadProps> = () => {
     const [title, setTitle] = useState("")
     const [authorName, setAuthorName] = useState("名無し")
-    const router = useRouter()
-    const handleAdd = async () => {
-        const newThread = await addThread({ title, authorName })
-        router.push(`/thread/${newThread.id}`)
-    }
     return (
         <Box>
             <Title>
@@ -33,7 +27,9 @@ const NewThread: FC<NewThreadProps> = () => {
                     label="あなたの名前"
                     style={{ flexGrow: 1 }}
                 />
-                <Button onClick={handleAdd}>
+                <Button
+                    onClick={() => handleAddThread({ title, authorName })}
+                >
                     new thread
                 </Button>
             </Flex>

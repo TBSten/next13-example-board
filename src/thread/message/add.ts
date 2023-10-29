@@ -1,4 +1,3 @@
-"use server"
 import { loadJson, saveJson } from "@/local-db"
 import { CreateMessageParams, CreateMessageParamsSchema, Message, MessageSchema } from "./type"
 

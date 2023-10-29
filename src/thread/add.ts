@@ -1,4 +1,3 @@
-"use server"
 import { saveJson } from '@/local-db';
 import { CreateThreadParams, CreateThreadParamsSchema, Thread } from "./type";
 

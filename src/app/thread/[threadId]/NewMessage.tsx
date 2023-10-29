@@ -1,9 +1,8 @@
 "use client"
 
-import { addMessage } from "@/thread/message/add"
 import { Anchor, Box, Button, Flex, TextInput, Textarea } from "@mantine/core"
-import { useRouter } from "next/navigation"
 import { FC, useState } from "react"
+import { handleAddMessage } from "./actions"
 
 interface NewMessageProps {
     threadId: string
@@ -12,10 +11,12 @@ export const NewMessage: FC<NewMessageProps> = ({ threadId }) => {
     const [message, setMessage] = useState("")
     const [isEditAuthorName, setIsEditAuthorName] = useState(false)
     const [authorName, setAuthorName] = useState("名無し")
-    const router = useRouter()
     const handleAdd = async () => {
-        await addMessage({ message, authorName, threadId })
-        router.refresh()
+        await handleAddMessage({
+            threadId,
+            message,
+            authorName,
+        })
         setMessage("")
     }
     return (
